@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; img-src * filesystem:; media-src *">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>DM</title>
+    </head>
+    <body>
+        <div id="play-area" class="play-area pixelated">
+            <div id="background-layer-2" class="background-layer-2 pixelated">
+
+            </div>
+            <div id="background-layer-1" class="background-layer-1 pixelated">
+
+            </div>
+            <div id="background-layer-0" class="background-layer-0 pixelated">
+
+            </div>
+
+            <div id="enemy-layer-2" class="enemy-layer-2 pixelated">
+
+            </div>
+            <div id="enemy-layer-1" class="enemy-layer-1 pixelated menu-text"> <!-- TODO remove text -->
+
+            </div>
+            <div id="enemy-layer-0" class="enemy-layer-0 pixelated">
+
+            </div>
+            
+            <div id="warning-layer" class="warning-layer pixelated">
+
+            </div>
+
+            <div id="player-layer-1" class="player-layer-1 pixelated">
+
+            </div>
+            <div id="player-layer-0" class="player-layer-0 pixelated">
+
+            </div>
+
+            <div id="hud-layer" class="hud-layer pixelated">
+
+            </div>
+
+            <div id="overlay-layer" class="overlay-layer pixelated">
+
+            </div>
+
+            <div id="control-layer-l" class="control-layer-l pixelated" onclick="fireL()">
+
+            </div>
+            <div id="control-layer-c" class="control-layer-c pixelated">
+
+            </div>
+            <div id="control-layer-r" class="control-layer-r pixelated" onclick="fireR()">
+
+            </div>
+        </div>
+        <div id="menu-layer" class="menu-layer pixelated">
+            
+        </div>
+        <div id="give-up" class="exit menu-item" onclick="giveUp()">GIVE UP</div>
+        <div id="score" class="score menu-item">0</div>
+        <div id="exit" class="exit menu-item" onclick="exit()">EXIT</div>
+        <div id="menu-text" class="menu-text">
+            <p id="new-game" class="menu-item" onclick="newGame()">NEW GAME</p>
+            <p id="dev-mode" class="menu-item" onclick="devMode()">DEV MODE</p>
+        </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/map1song1.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

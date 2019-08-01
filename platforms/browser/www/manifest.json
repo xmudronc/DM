@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "DM",
+  "short_name": "DM",
+  "version": "com.performanceactive.dm",
+  "description": "Like DOOM but really simple.",
+  "author": "performanceActive",
+  "icons": [],
+  "start_url": "index.html",
+  "theme_color": "#5f5f5f"
+}

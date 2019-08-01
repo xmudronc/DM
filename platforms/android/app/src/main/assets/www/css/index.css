@@ -1,0 +1,312 @@
+body {    
+    background-image: url('../img/levels/map1layer1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 90vw calc(56.25vw - 10vw);
+    background-color: #5f5f5f;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+.play-area {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    background-color: #5f5f5f;
+}
+
+.background-layer-0 {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;
+}
+
+.background-layer-1 {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;   
+    
+    background: url('../img/levels/map1layer1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.background-layer-2 {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;
+}
+
+.enemy-layer-2 {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;
+}
+
+.enemy-layer-1 {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;    
+}
+
+.enemy-layer-0 {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;    
+}
+
+.warning-layer {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;    
+}
+
+.player-layer-1 {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;    
+}
+
+.player-layer-0 {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;   
+    
+    background: url('../img/fire/s0.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hud-layer {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;  
+    
+    background: url('../img/reticle.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay-layer {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;    
+}
+
+.menu-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+}
+
+.menu-layer:before {
+    background: inherit;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+}
+
+.menu-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Enter_the_Harbinger';
+    text-align: center;
+    font-size: 8vw;
+}
+
+.menu-item {
+    color: white;
+    transition: all 1s ease;
+}
+
+.menu-item:hover {
+    text-shadow: 0 0 20px #dc143c;
+    transition: all 0.1s ease;
+}
+
+.exit {
+    position: absolute;
+    left: 5vw;
+    top: 5vw;
+    font-size: 4vw;
+    font-family: 'Enter_the_Harbinger';
+    font-size: 4vw;
+    visibility: hidden;
+}
+
+.score {
+    position: absolute;
+    right: 5vw;
+    top: 5vw;
+    font-size: 4vw;
+    font-family: 'Enter_the_Harbinger';
+    font-size: 4vw;
+    visibility: hidden;
+}
+
+@font-face {
+    font-family: 'Enter_the_Harbinger';
+    src: url('../fonts/Enter\ the\ Harbinger.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Lean_Foreword';
+    src: url('../fonts/Lean\ Foreword.otf') format('opentype');
+}
+
+@keyframes shotgun {
+    0% { background: url('../img/fire/s1.png');
+        background-size: cover;
+        background-position: center; }
+    12.5% { background: url('../img/fire/s2.png');
+        background-size: cover;
+        background-position: center; }
+    25% { background: url('../img/fire/s0.png');
+        background-size: cover;
+        background-position: center; }
+    37.5% { background: url('../img/fire/s4.png');
+        background-size: cover;
+        background-position: center; }
+    50% { background: url('../img/fire/s5.png');
+        background-size: cover;
+        background-position: center; }
+    62.5% { background: url('../img/fire/s6.png');
+        background-size: cover;
+        background-position: center; }
+    75% { background: url('../img/fire/s7.png');
+        background-size: cover;
+        background-position: center; }
+    87.5% { background: url('../img/fire/s8.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/fire/s0.png');
+        background-size: cover;
+        background-position: center; }
+  }
+
+  @keyframes fist {
+    0% { background: url('../img/fire/f1.png');
+        background-size: cover;
+        background-position: center; }
+    33% { background: url('../img/fire/f2.png');
+        background-size: cover;
+        background-position: center; }
+    66% { background: url('../img/fire/f1.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/fire/f0.png');
+        background-size: cover;
+        background-position: center; }
+  }
+
+  @keyframes chainsaw_start {
+    0% { background: url('../img/fire/c0.png');
+        background-size: cover;
+        background-position: center; }
+    50% { background: url('../img/fire/c1.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/fire/c2.png');
+        background-size: cover;
+        background-position: center; }
+  }
+
+  @keyframes chainsaw_loop {
+    0% { background: url('../img/fire/c1.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/fire/c2.png');
+        background-size: cover;
+        background-position: center; }
+  }
+
+  .control-layer-l {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    width: 30vw; 
+  }
+
+  .control-layer-c {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 35vw;
+    right: 35vw;
+    width: 30vw;  
+  }
+
+  .control-layer-r {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    right: 5vw;
+    width: 30vw; 
+  }
+
+  @keyframes imp_death {
+    0% { background: url('../img/imp/impD0.png');
+        background-size: cover;
+        background-position: center; }
+    25% { background: url('../img/imp/impD1.png');
+        background-size: cover;
+        background-position: center; }
+    50% { background: url('../img/imp/impD2.png');
+        background-size: cover;
+        background-position: center; }
+    75% { background: url('../img/imp/impD3.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/imp/impD4.png');
+        background-size: cover;
+        background-position: center; }
+}
+
+@keyframes imp_idle {
+    0% { background: url('../img/imp/impD0.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/imp/impD1.png');
+        background-size: cover;
+        background-position: center; }
+}
+
+  
