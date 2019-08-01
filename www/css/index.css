@@ -48,6 +48,14 @@ body {
     right: 5vw;
 }
 
+.enemy-layer-3 {
+    position: absolute;
+    height: calc(56.25vw - 10vw);
+    top: calc((100vh - 56.25vw + 10vw) / 2);
+    left: 5vw;
+    right: 5vw;
+}
+
 .enemy-layer-2 {
     position: absolute;
     height: calc(56.25vw - 10vw);
@@ -309,4 +317,171 @@ body {
         background-position: center; }
 }
 
+@keyframes imp_move {
+    0% { background: url('../img/imp/impD0.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%; }
+    100% { background: url('../img/imp/impD1.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%; }
+}
+
+@keyframes imp_to_center_right {
+    0% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 75vw;
+        right: 5vw; }
+    100% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 15vw;
+        right: 5vw; }
+}
+@keyframes imp_to_center_left {
+    0% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 5vw;
+        right: 75vw; }
+    100% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 5vw;
+        right: 15vw; }
+}
+
+@keyframes zombie_death {
+    0% { background: url('../img/zombie/zombieD0.png');
+        background-size: cover;
+        background-position: center; }
+    25% { background: url('../img/zombie/zombieD1.png');
+        background-size: cover;
+        background-position: center; }
+    50% { background: url('../img/zombie/zombieD2.png');
+        background-size: cover;
+        background-position: center; }
+    75% { background: url('../img/zombie/zombieD3.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/zombie/zombieD4.png');
+        background-size: cover;
+        background-position: center; }
+}
+
+@keyframes zombie_idle {
+    0% { background: url('../img/zombie/zombieD0.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/zombie/zombieD1.png');
+        background-size: cover;
+        background-position: center; }
+}
+
+@keyframes zombie_move {
+    0% { background: url('../img/zombie/zombieD0.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%; }
+    100% { background: url('../img/zombie/zombieD1.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%; }
+}
+
+@keyframes zombie_to_center_right {
+    0% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 75vw;
+        right: 5vw; }
+    100% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 15vw;
+        right: 5vw; }
+}
+@keyframes zombie_to_center_left {
+    0% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 5vw;
+        right: 75vw; }
+    100% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 5vw;
+        right: 15vw; }
+}
+
+@keyframes mancubus_death {
+    0% { background: url('../img/mancubus/mancubusD0.png');
+        background-size: cover;
+        background-position: center; }
+    25% { background: url('../img/mancubus/mancubusD1.png');
+        background-size: cover;
+        background-position: center; }
+    50% { background: url('../img/mancubus/mancubusD2.png');
+        background-size: cover;
+        background-position: center; }
+    75% { background: url('../img/mancubus/mancubusD3.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/mancubus/mancubusD4.png');
+        background-size: cover;
+        background-position: center; }
+}
+
+@keyframes mancubus_idle {
+    0% { background: url('../img/mancubus/mancubusD0.png');
+        background-size: cover;
+        background-position: center; }
+    100% { background: url('../img/mancubus/mancubusD1.png');
+        background-size: cover;
+        background-position: center; }
+}
+
+@keyframes mancubus_move {
+    0% { background: url('../img/mancubus/mancubusD0.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%; }
+    100% { background: url('../img/mancubus/mancubusD1.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%; }
+}
+
+@keyframes mancubus_to_center_right {
+    0% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 75vw;
+        right: 5vw; }
+    100% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 15vw;
+        right: 5vw; }
+}
+@keyframes mancubus_to_center_left {
+    0% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 5vw;
+        right: 75vw; }
+    100% { position: absolute;
+        height: calc(56.25vw - 10vw);
+        top: calc((100vh - 56.25vw + 10vw) / 2);
+        left: 5vw;
+        right: 15vw; }
+}
   

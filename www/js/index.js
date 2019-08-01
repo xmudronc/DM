@@ -250,24 +250,74 @@ function showMenu() {
     }
 }
 
-function playTiming(index) {
+async function playMovement(index, layer) {
+    var layno = layer ? "2" : "3";
+    if (level.timing[index + 1] != undefined && level.timing[index + 2] != undefined) {
+        if (index != 0) { 
+            var duration = Number(level.timing[index].duration) + Number(level.timing[index + 1].duration);
+            var side = Math.random() < 0.5 ? "left" : "right";
+            if (level.timing[index + 2].id == 'imp') {
+                document.getElementById('enemy-layer-' + layno).style.animation = Number(duration / 1000) + 's imp_to_center_' + side;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = '0.25s imp_move infinite';
+            } else if (level.timing[index + 2].id == 'zombie') {
+                document.getElementById('enemy-layer-' + layno).style.animation = Number(duration / 1000) + 's zombie_to_center_' + side;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = '0.25s zombie_move infinite';
+            } else if (level.timing[index + 2].id == 'mancubus') {
+                document.getElementById('enemy-layer-' + layno).style.animation = Number(duration / 1000) + 's mancubus_to_center_' + side;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = '0.25s mancubus_move infinite';
+            } else {
+                document.getElementById('enemy-layer-' + layno).style.animation = undefined;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = undefined;
+            }
+            setTimeout(function() {
+                document.getElementById('enemy-layer-' + layno).style.animation = undefined;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = undefined;
+            }, duration);
+        } else {
+            var duration = Number(level.timing[index].duration);
+            var side = Math.random() < 0.5 ? "left" : "right";
+            if (level.timing[index + 1].id == 'imp') {
+                document.getElementById('enemy-layer-' + layno).style.animation = Number(duration / 1000) + 's imp_to_center_' + side;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = '0.25s imp_move infinite';
+            } else if (level.timing[index + 1].id == 'zombie') {
+                document.getElementById('enemy-layer-' + layno).style.animation = Number(duration / 1000) + 's zombie_to_center_' + side;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = '0.25s zombie_move infinite';
+            } else if (level.timing[index + 1].id == 'mancubus') {
+                document.getElementById('enemy-layer-' + layno).style.animation = Number(duration / 1000) + 's mancubus_to_center_' + side;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = '0.25s mancubus_move infinite';
+            } else {
+                document.getElementById('enemy-layer-' + layno).style.animation = undefined;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = undefined;
+            }
+            setTimeout(function() {
+                document.getElementById('enemy-layer-' + layno).style.animation = undefined;
+                document.getElementById('enemy-layer-' + layno + '-repeat').style.animation = undefined;
+            }, duration);
+        }       
+    }
+}
+
+function playTiming(index, layer) {
     if (running) {
-        if (index < level.timing.length) {
+        if (index < level.timing.length) { 
+            playMovement(index, layer);
             var newIndex = index + 1;
             console.log(level.timing[index].id + ' start'); 
             if (level.timing[index].id == 'imp') {
-                document.getElementById('enemy-layer-2').style.animation = '0.25s imp_idle infinite';
-            } else if (level.timing[index].id != 'imp' && level.timing[index].id != 'blank') {
-                document.getElementById('enemy-layer-2').style.animation = undefined;
-                document.getElementById('enemy-layer-1').style.color = 'white'; document.getElementById('enemy-layer-1').innerHTML = level.timing[index].id;
-            } // TODO remove text
+                document.getElementById('enemy-layer-1').style.animation = '0.25s imp_idle infinite';
+            } else if (level.timing[index].id == 'zombie') {
+                document.getElementById('enemy-layer-1').style.animation = '0.25s zombie_idle infinite';
+            } else if (level.timing[index].id == 'mancubus') {
+                document.getElementById('enemy-layer-1').style.animation = '0.25s mancubus_idle infinite';
+            } else {
+                document.getElementById('enemy-layer-1').style.animation = undefined;
+            }
             currentEnemy = level.timing[index];
             setTimeout(function () {
                 chainsawStop();
                 checkIfAlive();
                 console.log(level.timing[index].id + ' stop'); 
-                document.getElementById('enemy-layer-1').innerHTML = ''; // TODO remove text
-                playTiming(newIndex);
+                playTiming(newIndex, !layer);
             }, level.timing[index].duration);
         } else {
             level.stop();
@@ -277,7 +327,7 @@ function playTiming(index) {
 
 function playLevel() {
     level.play();
-    playTiming(0);
+    playTiming(0, true);
 }
 
 function checkIfAlive() {
@@ -338,16 +388,29 @@ function hit() {
     console.log(currentEnemy.id + ' hit');
     if (currentEnemy.id == 'imp') {
         imp.play();
-        document.getElementById('enemy-layer-1').style.color = 'red'; //TODO remove text
-        document.getElementById('enemy-layer-2').style.animation = undefined;
+        document.getElementById('enemy-layer-1').style.animation = undefined;
         document.getElementById('enemy-layer-0').style.animation = '0.5s imp_death';
         setTimeout(function() {            
             document.getElementById('enemy-layer-0').style.animation = undefined;
         }, 500);
+    } else if (currentEnemy.id == 'zombie') {
+        imp.play();
+        document.getElementById('enemy-layer-1').style.animation = undefined;
+        document.getElementById('enemy-layer-0').style.animation = '0.5s zombie_death';
+        setTimeout(function() {            
+            document.getElementById('enemy-layer-0').style.animation = undefined;
+        }, 500);
+    } else if (currentEnemy.id == 'mancubus') {
+        imp.play();
+        document.getElementById('enemy-layer-1').style.animation = undefined;
+        document.getElementById('enemy-layer-0').style.animation = '0.5s mancubus_death';
+        setTimeout(function() {            
+            document.getElementById('enemy-layer-0').style.animation = undefined;
+        }, 500);
     } else {
-        document.getElementById('enemy-layer-1').style.color = 'red'; //TODO remove text
+        document.getElementById('enemy-layer-1').style.animation = undefined;
+        document.getElementById('enemy-layer-0').style.animation = undefined;
     }
-    //TODO on enemy hit animation
 }
 
 function fail(type) {
